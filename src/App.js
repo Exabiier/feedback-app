@@ -1,10 +1,19 @@
 // import React from 'react'
+import  Header from "./components/Header"
+
 
 function App() {
 
+return( 
+    <>
+    <Header text="Hello there" />
+<div className="container">
+    <h1>My App</h1>
+</div>
+</>
+)
+}
 
-
-    
 //     const title = "Blog Post";
 //     const body = "This is my blog post";
 //      const comments = [   
@@ -40,6 +49,6 @@ function App() {
 
 //     </div>    
 //     )
-}
+// }
 
 export default App
