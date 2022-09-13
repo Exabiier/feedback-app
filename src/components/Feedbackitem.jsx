@@ -1,5 +1,6 @@
 import React from 'react'
 import Card from './shared/Cards'
+import PropTypes from 'prop-types'
 
 export default function FeedbackItem({item}) {
 
@@ -9,7 +10,7 @@ export default function FeedbackItem({item}) {
 // const handleClick = () => {setRating((prev) => {return prev + 1})}
 
   return (
-    <Card reverse={true}>
+    <Card>
             <div className="num-display">{item.rating}</div>
             <div className="text-display">
                 {item.text}
@@ -18,5 +19,10 @@ export default function FeedbackItem({item}) {
       </Card>      
   )
 }
+
+FeedbackItem.propTypes = {
+    item: PropTypes.object.isRequired,
+}
+
 
 {/* <button onClick={handleClick}>Click</button> */}

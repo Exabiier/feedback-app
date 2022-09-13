@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'react'
 
 function Card({children, reverse}) {
   return (
@@ -15,4 +16,14 @@ function Card({children, reverse}) {
   )
 }
 
+Card.defaultProps = {
+  reverse: true,
+}
+
+Card.propTypes = {
+  children: PropTypes.node.isRequired,
+  reverse: PropTypes.bool,
+}
+
+// why is the children a node
 export default Card
