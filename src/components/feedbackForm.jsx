@@ -6,6 +6,7 @@ import { FaTerminal } from 'react-icons/fa'
 
 function feedbackForm() {
     const {text, setText} = useState('')
+    const {rating, setRating}= useState(10)
     const {btnDisabled, setBtnDisabled} = useState(true)
     const {message, setTMessage} = useState('')
 
@@ -29,7 +30,7 @@ function feedbackForm() {
             <h2>
                 How would you rate your service with us?
             </h2>
-            {/*@todo - rating select component*/}
+            <RatingSelect />
             <div className="input-group">
                 <input onChange={handleTextChange}  type="text" placeholder="Write a review" value={text}/>
                 <button type="submit">send</button>
