@@ -1,10 +1,13 @@
 import {useState} from 'react'
 import React from 'react'
 
-function RatingSelect() {
-    const {selected, setselected} = useState(10)
+function RatingSelect({select}) {
+    const {selected, setSelected} = useState(10)
 
-    const handleChange = (e) =>{}
+    const handleChange = (e) =>{
+        setSelected(+e.currentTarget.value);
+        select(+e.currentTarget.value)
+    }
 
   return (
     <div>
