@@ -4,7 +4,7 @@ import Card from './shared/Cards'
 import React from 'react'
 import { FaTerminal } from 'react-icons/fa'
 
-function feedbackForm() {
+function feedbackForm({handleAdd}) {
     const {text, setText} = useState('')
     const {rating, setRating}= useState(10)
     const {btnDisabled, setBtnDisabled} = useState(true)
@@ -24,10 +24,27 @@ function feedbackForm() {
         }
         setText(e.target.value)
     }
+
+const handleSubmit = (e) => {
+    e.preventDefault()
+    if(text.trim().length > 10){
+        const newFeedback =  {
+            text: text,
+            rating,
+        }
+        
+        handleAdd(newFeedback)
+
+        setText('')
+
+    }
+}
+
+
   return (
     <Card>
         <form>
-            <h2>
+            <h2 onSubmit={handleSubmit}>
                 How would you rate your service with us?
             </h2>
             <RatingSelect select ={(rating) => setRating(rating)}/>
