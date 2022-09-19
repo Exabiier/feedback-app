@@ -1,11 +1,13 @@
 import {v4 as uuidv4} from 'uuid'
 import React from 'react'
+import {BrowserRouter} from 'react-router-dom'
 import {useState} from 'react'
 import  Header from "./components/Header"
 import FeedbackList from './components/FeedbackList'
 import feedbackStats from './components/feedbackStats'
 import feedbackForm from './components/feedbackForm'
 import FeedbackData from './data/Feedbackdata'
+import AboutPage from './pages/AboutPage'
 
 
 function App() {
@@ -29,6 +31,7 @@ return(
             <feedbackForm handleAdd={addFeedback}/>
             <feedbackStats feedback={feedback} />
             <FeedbackList feedback={feedback} handleDelete={deleteFeedback} />
+            <AboutPage />
         </div>
 </>
 )
