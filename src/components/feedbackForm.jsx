@@ -1,10 +1,12 @@
-import {useState} from 'react'
+import {useState, useContext} from 'react'
 import Button from './shared/Button'
 import Card from './shared/Cards'
 import React from 'react'
 import { FaTerminal } from 'react-icons/fa'
+import FeedbackContext from '../context/FeedbackContext'
 
-function feedbackForm({handleAdd}) {
+function feedbackForm() {
+    const {addFeedback} = useContext(FeedbackContext)
     const {text, setText} = useState('')
     const {rating, setRating}= useState(10)
     const {btnDisabled, setBtnDisabled} = useState(true)
@@ -33,7 +35,7 @@ const handleSubmit = (e) => {
             rating,
         }
         
-        handleAdd(newFeedback)
+        addFeedback(newFeedback)
 
         setText('')
 
