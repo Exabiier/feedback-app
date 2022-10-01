@@ -40,6 +40,11 @@ const deleteFeedback = (id) => {
         }
     }
 
+    //  update the feedback item
+    const updateFeedback  = (id, upItem) => {
+
+    }
+
     // set item to be updated
     const editFeedback = (item) => {
         setFeedbackEdit({
@@ -54,6 +59,7 @@ const deleteFeedback = (id) => {
         addFeedback,
         editFeedback,
         feedbackEdit,
+        updateFeedback
     }}>
        {children} 
     </FeedbackContext.Provider>

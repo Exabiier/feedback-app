@@ -1,4 +1,4 @@
-import {useState, useContext} from 'react'
+import {useState, useContext, useEffect} from 'react'
 import Button from './shared/Button'
 import Card from './shared/Cards'
 import React from 'react'
@@ -6,11 +6,19 @@ import { FaTerminal } from 'react-icons/fa'
 import FeedbackContext from '../context/FeedbackContext'
 
 function feedbackForm() {
-    const {addFeedback} = useContext(FeedbackContext)
+    const {addFeedback,feedbackEdit, updateFeedback} = useContext(FeedbackContext)
     const {text, setText} = useState('')
     const {rating, setRating}= useState(10)
     const {btnDisabled, setBtnDisabled} = useState(true)
     const {message, setTMessage} = useState('')
+
+   useEffect(() => {
+        if(feedbackEdit.edit === true){
+            setBtnDisabled(false)
+            setText(feedbackEdit.item.text)
+            setRating(feedbackEdit.item.rating)
+        }
+   },[feedbackEdit])
 
 
     const handleTextChange = (e) => {
