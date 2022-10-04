@@ -42,7 +42,11 @@ const handleSubmit = (e) => {
             text: text,
             rating,
         }
-        
+        if(feedbackEdit.edit === true){
+            updateFeedback(feedbackEdit.item.id, newFeedback)
+        } else{
+            addFeedback(newFeedback)
+        }
         addFeedback(newFeedback)
 
         setText('')
